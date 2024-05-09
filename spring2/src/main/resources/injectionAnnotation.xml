@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="obj1" class="com.spring1.test.INjectionAnnotation1" autowire="byName" />
+	<bean id="storeBean1" class="com.spring1.dto.store" />
+	<bean id="storeBean2" class="com.spring1.dto.store"/>
+	
+	<bean id="obj2" class="com.spring1.test.INjectionAnnotation2" autowire="byType"/>
+	<bean id="storeBean1" class="com.spring1.dto.shop"/>
+	
+	<bean id="marketBean1" class="com.spring1.dto.Market"/>
+	<bean id="obj3" class="com.spring1.test.InjectionAnnotaion3" autowire="constructor" />
+	
+	<bean id="obj4" class="com.spring1.test.InjectionAnnotation4" autowire="constructor">
+		<constructor-arg value="1000" index="0" type="int" />
+		<constructor-arg value="문자열데이터" index="1" />	
+	</bean>
+    
+    
+    
+    <context:annotation-config/>
+    
+</beans>
